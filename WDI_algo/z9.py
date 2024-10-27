@@ -9,6 +9,9 @@ def fib(n):
         temp = b
         b=a+b
         a=temp
+        #c=a+b
+        #a = b
+        #b=c
     return a*b==n
 
 

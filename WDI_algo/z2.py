@@ -4,6 +4,6 @@
 a, b = 1, 1
 while a<1_000_000:
     print(a)
-    c = a+b
-    a=b
+    c=a+b
+    a = b
     b=c
