@@ -1,8 +1,6 @@
 #  Proszę napisać program wyznaczający najmniejszą wspólną wielokrotność 3 zadanych liczb naturalnych.
 #NWW(a,b)= ∣a⋅b∣ / NWD(a,b)
 
-
-
 def nwd(a,b):
 
     while b!=0:
