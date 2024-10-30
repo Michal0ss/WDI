@@ -11,11 +11,17 @@ def find_palindromes(n):
         print("----")
         print(reversed_n)
     # pobieramy ostatnia cyfe
+
         last_digit=n%10
+
     # mnozymy razy 10 i dodajemy liczbe do odwroconej
+
         reversed_n = reversed_n* 10 + last_digit
+
     # Usuwamy ostatnią cyfrę z oryginalnej liczby
+
         n//=10
+
     return original_n == reversed_n
 
 print(find_palindromes(12321))
