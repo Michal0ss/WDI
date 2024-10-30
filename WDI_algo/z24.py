@@ -24,4 +24,4 @@ def find_palindromes(n):
 
     return original_n == reversed_n
 
-print(find_palindromes(12321))
+print(find_palindromes(7392937))
