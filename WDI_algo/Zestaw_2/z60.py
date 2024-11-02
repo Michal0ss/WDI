@@ -13,4 +13,4 @@ def bin(n):
         i-=1
     print()
 
-print(bin(23))
+print(bin(29))
