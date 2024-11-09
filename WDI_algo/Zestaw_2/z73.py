@@ -3,7 +3,6 @@
 #wartości prawdopodobieństwa dla N z zakresu 20-40
 
 import random
-from multiprocessing.reduction import duplicate
 
 
 def birthday_simulation(N, trials=10000):
