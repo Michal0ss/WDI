@@ -12,10 +12,18 @@ def is_prime(n):
 
 def find(t):
     n= len(t)
-    m=0
+    product = 1
+    max_idx = None
     for i in range(n):
-        x=is_prime(t[i])
-        m*=x
-        for j in range(n):
-            if m == t[j]:
-                return True
+        # Check if the current number is prime
+        if is_prime(t[i]):
+            product *= t[i]
+
+        # Check if the current number is equal to the product
+        if t[i] == product:
+            max_idx = i
+
+    return max_idx
+
+T = [2,2,3,2,99,24]
+print(find(T))

@@ -10,3 +10,32 @@
 #print(trojki([2,3,4,5,6,8,7])) # 5 trójek (2,3,5),(3,4,5),(3,5,8),(5,6,7),(5,8,7)
 
 
+def nwd(a,b):
+    while b!=0:
+        a,b=b,a%b
+    return a
+
+def tr_nwd(a,b,c):
+    return nwd(nwd(a,b),c)
+
+def triples(T):
+    n=len(T)
+    L=[]
+    count=0
+    for i in range(n):
+        for j in range(i+1,n):
+            if abs(j-i)>2:
+                break
+            for k in range(j+1,n):
+                if abs(k-j)>2:
+                    break
+                if tr_nwd(T[i], T[j], T[k])==1:
+                    count += 1
+                    L+=[(T[i], T[j], T[k])]
+
+    print(L)
+    return count
+print(triples([2, 4, 6, 7, 8, 10, 12]))  # 0 trójek
+print(triples([2, 3, 4, 6, 7, 8, 10]))  # 1 trójka
+print(triples([2, 4, 3, 6, 5]))  # 2 trójki
+print(triples([2, 3, 4, 5, 6, 8, 7]))  # 5 trójek
