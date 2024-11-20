@@ -9,6 +9,7 @@ def primes():
         else:
             lp.append(p)
             yield p
+
 def twins():
     g = primes()
     w1 = next(g)
