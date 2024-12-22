@@ -4,3 +4,4 @@
 #szachowanych przez pozostałe wieże była najmniejsza. Do funkcji należy przekazać tablice t i w, funkcja
 #powinna zwrócić numery kolumn z których usunięto wieże. Uwaga - zakładamy, że wieża szachuje cały
 #wiersz i kolumnę z wyłączeniem pola na którym stoi
+
