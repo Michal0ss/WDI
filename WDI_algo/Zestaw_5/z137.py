@@ -4,7 +4,7 @@
 #   Na przykład dla ciągu 111011 jest to możliwe, a dla ciągu 110100 nie jest możliwe.
 
 from math import sqrt
-from typing import re
+
 
 
 def prime(n):

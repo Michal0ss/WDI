@@ -30,7 +30,7 @@ def zad_160(t):
             return False
 
         if not any(nachodza(t[idx], kwadrat) for kwadrat in kwadraty):
-            if rek(idx+1, szukane_pole-pole(t[idx]), kwadraty + [t[idx]]):
+            if rek(idx+1, szukane_pole - pole(t[idx]), kwadraty + [t[idx]]):
                 return True
 
         return rek(idx+1, szukane_pole, kwadraty)

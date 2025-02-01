@@ -28,5 +28,6 @@ def cutting(s):
 
     return count
 
-
+print(cutting("student"))
+print(cutting("sesja"))
 print(cutting("ocena"))
