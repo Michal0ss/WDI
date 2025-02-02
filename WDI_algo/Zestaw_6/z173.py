@@ -8,6 +8,8 @@ class Node:
         self.data=data #past data point
         self.next=next #pointer to the next Node
 
+
+
 class Linked_list:
     # user cannot access this headnote thats a placeholder, to be able to point to the first element in the list
     def __init__(self):
