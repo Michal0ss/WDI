@@ -30,9 +30,6 @@ def is_prime(n):
     return True
 
 
-def find_max(t):
-    pass
-
 def create_variations(k,t):
     result_add_first = 0
     result_multiply_first = 0
@@ -44,7 +41,6 @@ def create_variations(k,t):
             result += t[i-1]*t[i] # robimy to zeby istniała kolejnosc działan najpierw mnozymy potem dodajemy
     if k%2==0: # jesli ilosci cyfr jest podzielna przez dwa to dodajemy manualnie ostatni wyraz
         result += t[k-1]
-
     if is_prime(result):
         result_add_first = result/k
 
@@ -55,10 +51,20 @@ def create_variations(k,t):
             result += t[i-1]*t[i]
     if k%2==1:
         result +=t[k-1]
-
     if is_prime(result):
         result_multiply_first = result/k
 
 
     return max(result_add_first, result_multiply_first)
 
+
+
+def find_max(t):
+    n=len(t)
+    result = 0
+    for i in range(n):
+        for j in range(i+2,n+1):
+            if i == 0 and j == n:
+                continue
+            result = max(result, create_variations(j-i,t[i:j])) # (ilość, wybrany zakres z tablicy)
+    return result

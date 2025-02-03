@@ -5,19 +5,17 @@
 
 
 
-def is_multiply(s):
-    n=len(s)
-    for i in range(1, n//2+1):
-        if n%i==0:
-            if s == s[:i]*(n//i):
-                return True
-    return False
+def multi(t):
+    najdluzszy = 0
+    for napis in t:
+        n = len(napis)
 
-def multiply(t):
-    max_length=0
+        for dlugosc in range(n//2, 0, -1):
 
-    for s in t:
-        if is_multiply(s):
-            max_length = max(max_length, len(s))
-
-    return max_length
+            if n%dlugosc == 0:
+                element = napis[:dlugosc]
+                liczba_powtorzen = n//dlugosc
+                if element*liczba_powtorzen == napis:
+                    najdluzszy = max(najdluzszy, dlugosc)
+                    break
+        return najdluzszy

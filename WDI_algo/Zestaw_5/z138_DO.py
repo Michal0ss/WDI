@@ -11,6 +11,11 @@ import math
 
 def zadanie_138(t):
 
-    def rek (t, i, s_el=0, s_it=0, best=math.inf, l=0, s_bet=0):
-        if i>=len(t):
-            return s_el == s_it and s_el > 0, s_el, l
+    def rek (t, idx, sum_el, sum_idx, el_amount_subseq = 0, optimal_sum=0):
+        if idx >= len(t):
+            return sum_el==sum_idx and sum_el>0
+
+    sum_best = 0
+    poss = False
+
+
