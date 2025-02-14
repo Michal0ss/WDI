@@ -3,24 +3,26 @@
 
 def convert_to_bases(num) -> dict:
     results = {}
+    digits = "0123456789ABCDEF"  # Lista cyfr i liter dla systemów do 16
 
-    for base in range(2,17): # iterujemy po od 2 do 16 bo chce systemy od dwojkowego do szesn
-        converted = 0
-        place_value = 1
-        n = num
+    for base in range(2, 17):  # Od systemu binarnego (2) do szesnastkowego (16)
+        if base < 10:
+            converted1 = 0
+            place_value = 1
+            n = num
+            while n > 0:
+                remainder = n % base
+                converted1 += remainder * place_value
+                place_value *= 10
+                n //= base
+            results[base] = converted1 if converted1 else 0
+        else:
+            converted = ""
+            n = num
+            while n > 0:
+                remainder = n % base
+                converted = digits[remainder] + converted  # Dodajemy cyfrę na początek
+                n //= base
+            results[base] = converted if converted else "0"  # Jeśli wynik to 0, przypisujemy "0"
 
-        while n > 0:
-            remainder = n % base
-            converted += remainder * place_value
-            place_value*=10
-            n //= base
-
-        results[base] = converted # zapisujemy w dict-cie podstawa: skonwertowana liczba
-
-        return results
-
-decimal_number = int(input("Podaj liczbę w systemie dziesiętnym: "))
-base_conversions = convert_to_bases(decimal_number)
-
-for base, value in base_conversions.items():
-    print(f"Liczba w systemie {base}: {value}")
+    return results

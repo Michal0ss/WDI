@@ -13,8 +13,8 @@ def decimal_to_octal(x):
     place=1
 
     while x>0:
-        last_num=x%8
-        octal_num+=last_num*place
+        remainder=x%8
+        octal_num+=remainder*place
         x//=8
         place*=10
 
@@ -48,8 +48,9 @@ def square(t):
         for i in range(n-size +1):
             for j in range(n-size+1):
                 if is_valid_square(t, i,j,size):
-                    return size
-    return 0
+                    max_size = max(max_size, size)
+    return max_size if max_size>0 else 0
+
 
 T = [
     [12, 8, 15],

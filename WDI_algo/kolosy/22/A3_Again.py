@@ -6,30 +6,25 @@
 # funkcję king(N,L), która zwróci maksymalną liczbę ruchów jakie może wykonać król na drodze do celu. Do
 # funkcji należy przekazać wyłącznie dwa parametry: rozmiar szachownicy N oraz listę L zawierającą położenia pionków.
 # Jeżeli dotarcie do celu nie jest możliwe funkcja powinna zwrócić wartość None.
-
 from math import inf
+def king(N,L):
+    def legalne(x,y):
+        return (0<=x<N) and (0<=y<N)
 
-def max_moves(x, y, forbidden, n, prev_move = None ):
-    if (x,y) == (n-1,n-1):
-        return 0
-    if (x,y) in forbidden:
-        return -inf
-    if  not (0<=x<n and 0<=y<n):
-        return -inf
+    def ruch(pos:tuple, prev_move=None): # pos = x,y
 
-    res = -inf
+        if pos == (N-1,N-1):
+            return 0
+        if not legalne(pos[0], pos[1]):
+            return inf
+        if pos in L:
+            return inf
 
-    if prev_move != "up": # czy moge w dol
-        res = max(res, max_moves(x+1, y, forbidden, n, "down")+1)
-    if prev_move != "down": # czy moge w gore
-        res = max(res, max_moves(x-1, y, forbidden, n, "up")+1)
-    res = max(res, max_moves(x, y+1, forbidden, n, "right")+1)
+        prawo = ruch((pos[0], pos[1]+1), "prawo")
+        dol= ruch((pos[0]+1,pos[1]), "dol")
 
-    return res
-
-def knight(n,l):
-    result = max_moves(0,0,l, n)
-    return None if result == -inf else result
-
-
-
+        if prev_move!="prawo":
+            prawo+=1
+        if prev_move!="dol":
+            dol+=1
+        return min(dol,prawo)
