@@ -33,4 +33,19 @@ def insert(p,n):
             start=head
             current = start.next
             length = 0
-            
+
+            while current != start:
+                if first_digit(current.val) == last_digit(n):
+                    if length >= 2:
+                        start.next = Node(n,current)
+                        return length - 1
+                current = current.next
+                length+=1
+
+            head = head.next
+            if head == p:
+                break
+
+    return 0
+
+
