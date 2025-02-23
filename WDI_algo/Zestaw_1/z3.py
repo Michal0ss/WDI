@@ -1,7 +1,6 @@
 
 #Proszę znaleźć wyrazy początkowe ciągu zamiast 1,1 o najmniejszej sumie, aby w ciągu
-#analogicznym do ciągu Fibonacciego wystąpił wyraz równy numerowi bieżącego roku.\
-#????????????????????????????
+#analogicznym do ciągu Fibonacciego wystąpił wyraz równy numerowi bieżącego roku.
 target = 2024
 min_sum = float('inf')
 best_a, best_b = 0, 0

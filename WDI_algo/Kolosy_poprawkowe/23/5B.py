@@ -27,9 +27,11 @@ def thirteen(t):
         if not any(nachodza(t[idx], kwadrat) for kwadrat in kwadraty): # jesli zaden kwadrat nie nachodzi
             if rek(idx+1,szukane_pole-pole(t[idx]), kwadraty +[t[idx]]):
                 return True
-        return(idx+1, szukane_pole, kwadraty)
+        return rek(idx+1, szukane_pole, kwadraty)
 
     return rek()
+
+
 
 
 
