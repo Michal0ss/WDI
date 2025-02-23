@@ -11,5 +11,7 @@ File_creator.py – A script that generates a specified number of empty .py file
 
 🚀 How to Use
 Cloning the Repository:
+
 Clone the repository using: git clone https://github.com/your-repository-name.git
+
 Navigate to the repository folder: cd your-repository-name
